@@ -1,2 +1,2 @@
 # mcard-game
-game
+Play and Enjoy the game
