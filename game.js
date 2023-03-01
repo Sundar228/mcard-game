@@ -29,7 +29,7 @@ function matchCards(img1, img2) {
 
         if(matched == 8) {
             document.write('<p id="result">Number of Flips you done : '+flipped+'</p>');
-            document.write('<p id="result1">Points you earned : '+points+'</p>');
+            document.write('<p id="result1">Points you earned out of 400: '+points+'</p>');
             document.write('<p id="result2">Thank You!' +'</p>');
             let p = document.querySelector('#result');
             p.style.color = 'green';
