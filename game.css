@@ -12,6 +12,7 @@
   justify-content: center;
   min-height: 100vh;
   background: url(images/background.png);
+  background-repeat: no-repeat;
 }
 .logo{
   width: 400px;
