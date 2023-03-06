@@ -5,7 +5,6 @@ let cardOne, cardTwo;
 let disableDeck = false;
 let flipped=0;
 let points = 0;
-
 function flipCard({target: clickedCard}) {
     if(cardOne !== clickedCard && !disableDeck) {
         clickedCard.classList.add("flip");
@@ -26,7 +25,6 @@ function matchCards(img1, img2) {
     if(img1 === img2) {
         matched++;
         points=points+50;
-
         if(matched == 8) {
             document.write('<p id="result">Number of Flips you done : '+flipped+'</p>');
             document.write('<p id="result1">Points you earned out of 400: '+points+'</p>');
@@ -54,7 +52,8 @@ function matchCards(img1, img2) {
             }, 1000);
 
             document.body.style.backgroundImage = "url(images/answerbackground.png)";
-            document.body.style.backgroundSize = "cover";       
+            document.body.style.backgroundSize = "cover";  
+            document.body.style.backgroundRepeat="no-repeat";     
         }
         cardOne.removeEventListener("click", flipCard);
         cardTwo.removeEventListener("click", flipCard);
