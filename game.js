@@ -7,12 +7,15 @@ let flipped=0;
 let points = 0;
 function flipCard({target: clickedCard}) {
     if(cardOne !== clickedCard && !disableDeck) {
+        
         clickedCard.classList.add("flip");
         flipped++;
         if(!cardOne) {
+            
             points=points-10;
             return cardOne = clickedCard;
         }
+        score();
         cardTwo = clickedCard;
         disableDeck = true;
         let cardOneImg = cardOne.querySelector(".back-view img").src,
@@ -23,11 +26,13 @@ function flipCard({target: clickedCard}) {
 
 function matchCards(img1, img2) {
     if(img1 === img2) {
+        
         matched++;
         points=points+50;
+        score();
         if(matched == 8) {
             document.write('<p id="result">Number of Flips you done : '+flipped+'</p>');
-            document.write('<p id="result1">Points you earned out of 400: '+points+'</p>');
+            document.write('<p id="result1">Score out of 400: '+points+'</p>');
             document.write('<p id="result2">Thank You!' +'</p>');
             let p = document.querySelector('#result');
             p.style.color = 'green';
@@ -72,7 +77,10 @@ function matchCards(img1, img2) {
         disableDeck = false;
     }, 1200);
 }
-
+function score(){
+    let k=document.getElementById("demo");
+    k.innerHTML="<span>Score :</span>" + points;
+}
 function shuffleCard() {
     matched = 0;
     disableDeck = false;
